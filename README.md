@@ -1,17 +1,48 @@
-# number_trivia_tdd
+# 🎯 Number Trivia App — Flutter Clean Architecture & TDD
 
-A new Flutter project.
+A robust, enterprise-grade Flutter application built following **Clean Architecture** principles and **Test-Driven Development (TDD)**. 
 
-## Getting Started
+This project demonstrates strict separation of concerns across Domain, Data, and Presentation layers using **BLoC** for state management, **GetIt** for dependency injection, and **Dio** for advanced networking with logging.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 📸 Screenshots
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+| Home Screen | | Trivia Display |
+| :---: | :---:| :---: |
+| <img src="screenshots/home.png" width="250"/> | <img src="screenshots/display.png" width="250"/> |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> *(Place your app screenshot images inside a `screenshots/` folder in the project root to display them in this table.)*
+
+---
+
+## 📌 Important Note: API Endpoint Change
+
+> **Why Cat Facts instead of Number Trivia?**  
+> The original public API endpoint (`numbersapi.com`) frequently experiences server downtime, HTTP cleartext restrictions, and Nginx routing issues. 
+> 
+> To guarantee **100% network uptime**, **HTTPS security**, and a seamless developer experience, the remote data source was switched to the **Cat Facts API** (`https://catfact.ninja/`).
+> 
+> **The core architecture remains completely untouched:**
+> * Domain Entities, Use Cases, Repositories, BLoCs, and UI Widgets are **100% identical**.
+> * The response payload (`fact` text and character `length`) is mapped directly into our `NumberTriviaModel` at the `RemoteDataSource` level.
+> * This demonstrates the true power of **Clean Architecture** — swapping an external data source requires zero changes to the core business logic or UI.
+
+---
+
+## 🏗️ Architecture & Layer Breakdown
+
+The project follows Reso Coder's Clean Architecture pattern with three main layers:
+
+```text
+lib/
+ ├── core/                     # Common utilities, error handling, network clients
+ │    ├── error/               # Failures & Exceptions
+ │    ├── network/             # DioClient with base URLs & logging
+ │    └── usecases/            # Base UseCase contracts
+ ├── features/
+ │    └── number_trivia/
+ │         ├── data/           # Models, Data Sources, Repository Implementations
+ │         ├── domain/         # Entities, Use Case contracts, Repository Interfaces
+ │         └── presentation/   # BLoCs, Pages, & UI Widgets
+ └── injection_container.dart  # GetIt Dependency Injection container
