@@ -8,8 +8,8 @@ This project demonstrates strict separation of concerns across Domain, Data, and
 
 ## 📸 Screenshots
 
-| Home Screen | | Trivia Display |
-| :---: | :---:| :---: |
+| Home Screen | Trivia Display |
+| :---: | :---: |
 | <img src="screenshots/home.png" width="250"/> | <img src="screenshots/display.png" width="250"/> |
 
 > *(Place your app screenshot images inside a `screenshots/` folder in the project root to display them in this table.)*
