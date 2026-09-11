@@ -44,13 +44,19 @@ lib/
  │         └── presentation/   # BLoCs, Pages, & UI Widgets
  └── injection_container.dart  # GetIt Dependency Injection container
 
+```
 ---
 
 ## 🛠️ Tech Stack & Dependencies
 
 Framework: Flutter
+
 State Management: flutter_bloc
+
 Dependency Injection: get_it
+
 Networking: dio
+
 Functional Error Handling: fpdart / dartz
+
 Testing: bloc_test, mocktail
