@@ -11,9 +11,6 @@ This project demonstrates strict separation of concerns across Domain, Data, and
 | Home Screen | Trivia Display |
 | :---: | :---: |
 | <img src="screenshots/home.png" width="250"/> | <img src="screenshots/display.png" width="250"/> |
-
-> *(Place your app screenshot images inside a `screenshots/` folder in the project root to display them in this table.)*
-
 ---
 
 ## 📌 Important Note: API Endpoint Change
@@ -46,3 +43,14 @@ lib/
  │         ├── domain/         # Entities, Use Case contracts, Repository Interfaces
  │         └── presentation/   # BLoCs, Pages, & UI Widgets
  └── injection_container.dart  # GetIt Dependency Injection container
+
+---
+
+## 🛠️ Tech Stack & Dependencies
+
+Framework: Flutter
+State Management: flutter_bloc
+Dependency Injection: get_it
+Networking: dio
+Functional Error Handling: fpdart / dartz
+Testing: bloc_test, mocktail
